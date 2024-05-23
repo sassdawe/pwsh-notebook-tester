@@ -31,7 +31,7 @@ jobs:
         uses: JustinGrote/ModuleFast-action@v0.0.1
         with:
           # The modules to install. Separate module specifications with a space or linebreak. If this setting is not specified, will look for a required modules spec in the working directory.
-          modules: PowerShellNotebook
+          specification: PowerShellNotebook
         
       # Runs a single command using the runners shell
       - name: Run a one-line script

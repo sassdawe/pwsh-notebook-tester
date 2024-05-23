@@ -34,13 +34,12 @@ jobs:
           specification: PowerShellNotebook
         
       # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: List folder content
         shell: pwsh
         run: Get-ChildItem
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Invoke PowerShell Notebook
         shell: pwsh
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          Invoke-PowerShellNotebook ./about_stderr.ipynb

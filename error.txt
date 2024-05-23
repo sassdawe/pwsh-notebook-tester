@@ -1,0 +1,5 @@
+Write-Error: 
+Line |
+   4 |  &{Write-Error 'redirecting stderr to a file >&2' } 2> error.txt
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | redirecting stderr to a file >&2

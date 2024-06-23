@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Pure-CI
 
 # Controls when the workflow will run
 on:
@@ -33,10 +33,20 @@ jobs:
           # The modules to install. Separate module specifications with a space or linebreak. If this setting is not specified, will look for a required modules spec in the working directory.
           specification: PowerShellNotebook
         
-      # Runs a single command using the runners shell
-      - name: List folder content
+      - name: 'Az CLI login'
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
+  
+      - name: 'Run Azure CLI commands'
         shell: pwsh
-        run: Get-ChildItem
+        run: |
+          az account show
+          (az group list) | convertfrom-json | ft name, location
+          get-command az | format-list
 
       # Runs a set of commands using the runners shell
       - name: Invoke PowerShell Notebook

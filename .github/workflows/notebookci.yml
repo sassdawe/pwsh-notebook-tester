@@ -38,7 +38,8 @@ jobs:
         run: |
           az account show
           az group list
-          pwd
+          get-command az | format-list
+          
 
       - name: PowerShell Notebook Action
         # You may pin to the exact commit or the version.

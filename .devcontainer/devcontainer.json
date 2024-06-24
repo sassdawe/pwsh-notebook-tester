@@ -4,5 +4,14 @@
       "version": "latest"
     },
     "ghcr.io/devcontainers/features/powershell:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.powershell",
+        "ms-dotnettools.dotnet-interactive-vscode",
+        "GitHub.copilot"
+      ]
+    }
   }
 }

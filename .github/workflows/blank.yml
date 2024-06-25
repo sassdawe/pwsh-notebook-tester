@@ -56,4 +56,4 @@ jobs:
       - name: Invoke PowerShell Notebook
         shell: pwsh
         run: |
-          Invoke-PowerShellNotebook ./about_stderr.ipynb
+          Invoke-PowerShellNotebook ./tester-notebook.ipynb
